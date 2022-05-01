@@ -9,7 +9,7 @@ This project is about building and programing an ant-like robot
 ### What the system must have:
 - 3 motors for each leg
   - 1 for hight control
-  - 2 for walking movment (lift + translation)
+  - 2 for walking movement (lift + translation)
 
 ### What the system must do:
 - Mimic the walking movement of a real ant
