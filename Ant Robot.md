@@ -20,7 +20,7 @@ This project is about building and programing an ant-like robot
 - Program new movements for the tail
 
 ### Architecture description
-[Formiga (1)](https://user-images.githubusercontent.com/90531157/166229994-a4a08714-84fe-4515-930b-5301fd704b52.jpg)
+![Formiga (1)](https://user-images.githubusercontent.com/90531157/166230959-45118a2e-0fc9-4533-b6c1-b5906f98ac9d.jpg)
 
 Up to now,  we have the following IO requirements for the GPIO (still need to verify availability on the Viola Base Board
   1. 3 Output - Slave sistems (control motors via PWM)
