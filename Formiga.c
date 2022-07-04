@@ -76,13 +76,6 @@ void MoverPerna(int i, int j) {
 		MatrizControle[2][0] = 0;
 		MatrizControle[3][0] = 0;		
 	}
-	//Testando
-	for(int i = 0; i<3; i++){
-		for(int j = 0; j<2; j++){
-			printf("%d ", MatrizElevacao[i][j]);
-		}
-		printf("\n");
-	}
 }
 
 void MoverPernaRev(int i, int j) {
