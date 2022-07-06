@@ -1,31 +1,27 @@
 # ATTA
-Embedded Systems Project
+Projeto final da matéria **SEM0544 - Sistemas Embarcados (2022)**
 
-## Quick description
-This project is about building and programing an ant-like robot
+## Alunos
+[Leandro Yuji Kanno](https://github.com/L-Yuji) (NºUSP 10883811)
+[Vinícius Motta Benatti](https://github.com/benattiv) (NºUSP 10820762)
 
-## Scope
+## Introdução
 
-### What the system must have:
-- 3 motors for each leg
-  - 1 for hight control
-  - 2 for walking movement (lift + translation)
+## Proposta
+O projeto possui o objetivo de implementar o movimento de caminhada de um robô hexapode. O hardware utilizado é composto por 12 servo motores de aeromodelismo, sendo 2 para cada perna, uma placa Toradex Viola, responsável por controlar todo o sistema, e duas MBEDS, que funcionarão como sistemas escravos controlando os servos.
 
-### What the system must do:
-- Mimic the walking movement of a real ant
+## Desenvolvimento
 
-### Optionals (plus to the project):
-- Control via bluetooth
-- Installation of a tail to transform the robot into a scorpion
-- Program new movements for the tail
+A primeira etapa do desenvolvimento foi projetar a lógica do funcionamento do sistema, para depois programar o movimento do robô e a comunicação entre as placas. 
 
-### Architecture description
-![Formiga (1)](https://user-images.githubusercontent.com/90531157/166230959-45118a2e-0fc9-4533-b6c1-b5906f98ac9d.jpg)
+Como a Toradex não apresenta saídas de PWM suficientes para todos os motores, pensamos em utilizar 2 MBEDS como placas auxiliares (sistemas escravos) para controlar os motores, deixando uma delas com as pernas pares e a outra com as ímpares como mostrado na figura abaixo
 
-Up to now,  we have the following IO requirements for the GPIO (still need to verify availability on the Viola Base Board)
-  1. 3 Output - Slave sistems (control motors via PWM)
-  2. 1 Input - Controls
+![Formiga](https://user-images.githubusercontent.com/90531157/177629817-9f1fb4b1-df85-41d5-8581-431c12337dc5.jpg)
 
-### State Machine for the Software
+Após a definição do hardware, dividimos o projeto em duas partes, uma para desenvolver o código da movimentação e outra para desenvolver o código para a comunicação entres as três placas por meio do protocolo CAN.
 
-- This version is the first idea of the group of how the sistem will work
+### Movimentação
+
+### Protocolo CAN
+
+## Conclusão
