@@ -24,7 +24,7 @@ Durante o desenvolvimento da lógica da caminhada nos deparamos com diferentes t
 
 ![Caminhada](https://user-images.githubusercontent.com/90531157/177638373-2aa66789-ff5c-49eb-a0b6-349065de662b.jpg)
 
-A partir disso começamos a desenvolver o código em c: [Formiga](Formiga.c), que é responsável por todo o controle do movimento das pernas.
+A partir disso começamos a desenvolver o código [Formiga.c](Formiga.c), que é responsável por todo o controle do movimento das pernas.
 
 ### Protocolo CAN
 
