@@ -3,6 +3,7 @@ Projeto final da matéria **SEM0544 - Sistemas Embarcados (2022)**
 
 ## Alunos
 [Leandro Yuji Kanno](https://github.com/L-Yuji) (NºUSP 10883811)
+
 [Vinícius Motta Benatti](https://github.com/benattiv) (NºUSP 10820762)
 
 ## Introdução
