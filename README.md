@@ -22,7 +22,7 @@ Após a definição do hardware, dividimos o projeto em duas partes, uma para de
 ### Movimentação
 Durante o desenvolvimento da lógica da caminhada nos deparamos com diferentes tipos de movimentos possíveis. Visando tornar o código mais leve, decidimos programar o movimento de forma que as pernas pares e ímpares possuam movimentos separados. Esse tipo de caminhada também gera uma maior estabilidade, pois sempre haverão no mínimo 3 pernas em contato com o solo. Para auxilixar o desenvolvimento do código, produzimos o fluxograma abaixo.
 
-![Caminhada](https://user-images.githubusercontent.com/90531157/177638373-2aa66789-ff5c-49eb-a0b6-349065de662b.jpg)
+![Caminhada](https://user-images.githubusercontent.com/90531157/177643280-b7854ac2-6927-4a58-9bca-78a4a54f6e1e.jpg)
 
 A partir disso começamos a desenvolver o código [Formiga.c](Formiga.c), que é responsável por todo o controle do movimento das pernas.
 
