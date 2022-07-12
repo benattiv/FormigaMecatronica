@@ -24,13 +24,13 @@ Durante o desenvolvimento da lógica da caminhada nos deparamos com diferentes t
 
 ![Caminhada](https://user-images.githubusercontent.com/90531157/177643280-b7854ac2-6927-4a58-9bca-78a4a54f6e1e.jpg)
 
-A partir disso começamos a desenvolver o código [Formiga.c](Formiga.c), que é responsável por todo o controle do movimento das pernas. Ele realiza o controle dos motores por meio de uma lógica incremental das variáveis que serão enviadas para as MBEDs via protocolo CAN. Para facilitar a implementação do movimento, ele foi dividido em 4 estapas, sendo elas:
+A partir disso começamos a desenvolver o código [Formiga.c](Formiga.c), que é responsável por todo o controle do movimento das pernas. Ele realiza o controle dos motores por meio de uma lógica incremental das variáveis que, ao chegarem ao valor final, serão enviadas para as MBEDs via protocolo CAN. Para facilitar a implementação do movimento, ele foi dividido em 4 estapas, sendo elas:
 * 1 - Elevação da perna;
 * 2 - Translação (frente ou trás);
 * 3 - Abaixamento da perna;
 * 4 - Retornar a posição inicial.
 
-Além disso, também realizamos o desenvolvimento do código que irá rodar nas MBEDs, sendo responsável pelo recebimento das variáveis, normalização e envio para os motores por meio da biblioteca Servo.h.
+Além disso, também realizamos o desenvolvimento do código [mbed.c](mbed.c) que irá rodar nas MBEDs, sendo responsável pelo recebimento das variáveis, normalização e envio para os motores por meio da biblioteca Servo.h. Para reduzir a quantidade de envios nescessários para a movimentação, a toradex envia o valor final dos servos e a MBED é responsável por realizar o incremento nos motores até atingir o valor normalizado. Os códigos para ambas as MBEDs são iguais, mudando apenas os motores 1, 3 e 5 para 2, 4 e 6.
 
 ### Protocolo CAN
 
