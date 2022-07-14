@@ -19,7 +19,7 @@ Como a Toradex não apresenta saídas de PWM suficientes para todos os motores, 
 
 <p align="center">
 <img src="Toradex.jpg" width ="400">
-<img src="mbed.jpg" width="366">
+<img src="mbed.jpg" width="550">
 </p>
 
 Após a definição do hardware, dividimos o projeto em duas partes, uma para desenvolver o código da movimentação e outra para desenvolver o código para a comunicação entres as três placas por meio do protocolo CAN.
