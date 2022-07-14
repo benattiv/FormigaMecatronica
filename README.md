@@ -17,12 +17,16 @@ Como a Toradex não apresenta saídas de PWM suficientes para todos os motores, 
 
 ![Formiga](https://user-images.githubusercontent.com/90531157/177629817-9f1fb4b1-df85-41d5-8581-431c12337dc5.jpg)
 
-<p align="center">
-<img src="Toradex.jpg" width ="350">
-  <figcaption> Toradex VF50.</figcaption>
-<img src="mbed.jpg" width="500">
-  <figcaption>MBED.</figcaption>
-</p>
+<table>
+  <tr>
+    <td><img src="Toradex.jpg" width=400></td>
+    <td><img src="mbed.jpg" width=450></td>
+  </tr>
+    <tr>
+    <td>Toradex VF50 </td>
+     <td>MBED</td>
+  </tr>
+ </table>
 
 Após a definição do hardware, dividimos o projeto em duas partes, uma para desenvolver o código da movimentação e outra para desenvolver o código para a comunicação entres as três placas por meio do protocolo CAN.
 
