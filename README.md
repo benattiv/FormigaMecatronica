@@ -41,10 +41,13 @@ A partir disso começamos a desenvolver o código [Formiga.c](Formiga.c), que é
 * 3 - Abaixamento da perna;
 * 4 - Retornar a posição inicial.
 
-Além disso, também realizamos o desenvolvimento do código [mbed.c](mbed.c) que irá rodar nas MBEDs, sendo responsável pelo recebimento das variáveis, normalização e envio para os motores por meio da biblioteca Servo.h. Para reduzir a quantidade de envios nescessários para a movimentação, a toradex envia o valor final dos servos e a MBED é responsável por realizar o incremento nos motores até atingir o valor normalizado. Os códigos para ambas as MBEDs são iguais, mudando apenas os motores 1, 3 e 5 para 2, 4 e 6.
+Além disso, também realizamos o desenvolvimento do código [mbed.c](mbed.c) que irá rodar nas MBEDs, sendo responsável pelo recebimento das variáveis, normalização e envio para os motores por meio da biblioteca Servo.h. Para reduzir a quantidade de envios necessários para a movimentação, a toradex envia o valor final dos servos e a MBED é responsável por realizar o incremento nos motores até atingir o valor normalizado. Os códigos para ambas as MBEDs são iguais, mudando apenas os motores 1, 3 e 5 para 2, 4 e 6.
 
 ### Protocolo CAN
+O protocolo de comunicação em série Controller Area Network (CAN) permite o controle em tempo real com elevado nível de segurança, sendo possível integração multi-mestre com múltiplos destinatários (multicast). Cada mensagem transmitida no nó é acompanhada por um identificador, que, através dele, é informada tanto a prioridade quanto se o receptor deve ou não processá-la.
+O CAN é um sistema de barramento série em que cada mensagem contém, no máximo, 8 bytes ou 40 bits. Contudo, é possível o envio de mensagens maiores através da segmentação. Para o projeto desenvolvido o tamanho padrão das mensagens é suficiente, visto que são necessárias duas informações por motor: o ângulo, de 0º a 180º, e o sentido do movimento, totalizando no mínimo 12 dos 40 bits.
 
+A mensagem contendo a posição final é enviada aos MBEDs, que, a partir dela, coordena os motores cuja competência confere à placa, pares ou ímpares, para a execução do movimento.
 
 ## Conclusão
 
