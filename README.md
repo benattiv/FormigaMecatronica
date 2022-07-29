@@ -8,7 +8,7 @@ Projeto final da matéria **SEM0544 - Sistemas Embarcados (2022)**
 ## Introdução
 
 ## Proposta
-O projeto possui o objetivo de implementar o movimento de caminhada de um robô hexapode. O hardware utilizado é composto por 12 servo motores de aeromodelismo, sendo 2 para cada perna, uma placa Toradex VF50, responsável por controlar todo o sistema, e duas MBEDS, que funcionarão como sistemas escravos controlando os servos. A princípio, focamos no desenvolviemnto do código da caminhada, buscando deixa-lo funcional e preparado para a cominicação entre dispositivos. Infelizmente, como ambos os membros do grupo estão fazendo estágio fora de São Carlos, não foi possível realizar testes práticos com os códigos desenvolvidos utilizando o hardware disponibilizado.
+O projeto possui o objetivo de implementar o movimento de caminhada de um robô hexápode. O hardware utilizado é composto por 12 servomotores de aeromodelismo, sendo 2 para cada perna, uma placa Toradex VF50, responsável por controlar todo o sistema, e duas MBEDS, que funcionarão como sistemas escravos controlando os servos. A princípio, focamos no desenvolvimento do código da caminhada, buscando deixá-lo funcional e preparado para a comunicação entre dispositivos. Infelizmente, como ambos os membros do grupo estão fazendo estágio fora de São Carlos, não foi possível realizar testes práticos com os códigos desenvolvidos utilizando o hardware disponibilizado.
 
 ## Desenvolvimento
 A primeira etapa do desenvolvimento foi projetar a lógica do funcionamento do sistema, para depois programar o movimento do robô e a comunicação entre as placas. 
