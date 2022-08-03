@@ -55,11 +55,11 @@ Já as MBEDs têm, por padrão, o protocolo CAN acessível através dos pinos 29
 
 ## Resultados e discussão
 
-A princípio, como ainda não havíamos desenvolvido a parte da comunicação, testamos o código da caminhada ([Formiga.c](Formiga.c)) por meio de printfs e scanfs. A ideia inicial era posteriormente substituir os printfs pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse corretamente.
+A princípio, como ainda não havíamos desenvolvido a parte da comunicação, testamos o código da caminhada ([Formiga.c](Formiga.c)) por meio de printfs e scanfs. A ideia inicial era posteriormente substituir os printfs pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse corretamente. Também realizamos o cross-compile do código para que ele pudesse ser testado no sistema embarcado por meio das placas disponibilizadas pelos professores via AnyDesk.
 
 ![caminhada](https://user-images.githubusercontent.com/90531157/182653525-9d54adf1-4003-4eab-9c34-5298089a4916.png)
 
-Podemos observar na imagem acima os valores que seriam enviados para os servomotores. Os primeiros 3 conjuntos de dados são referentes às pernas ímpares, enquanto os que se encontram após a sincronização são referentes às pernas pares. Os valores variam de motor para motor pois os valores iniciais são aleatórios e seriam definidos posteriormente de maneira empírica.
+Podemos observar na imagem acima os valores que seriam enviados para os servomotores. Os primeiros 3 conjuntos de dados são referentes às pernas ímpares, enquanto os que se encontram após a sincronização são referentes às pernas pares. Os valores variam de motor para motor, pois os valores iniciais são aleatórios e seriam definidos posteriormente de maneira empírica. Dessa forma, podemos afirmar que obtivemos resultados satisfatórios para os testes do código responsável pela lógica do movimento do robô.
 
 ## Conclusão
 Apesar da impossibilidade de implementação prática dos códigos e visualização do sistema eletromecânico devido ao acesso impossibilitado dos membros, afastados de São Carlos por estagiar em cidades distantes, foram, através das práticas realizadas em sala de aula e programação remota, alcançados os fins acadêmicos da disciplina, como a familiarização com o Linux e, no contexto de sistemas embarcados, seus módulos, protocolos, terminologias e paradigmas. 
