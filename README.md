@@ -47,15 +47,19 @@ Além disso, também realizamos o desenvolvimento do código [mbed.c](mbed.c) qu
 O protocolo de comunicação em série Controller Area Network (CAN), desenvolvido nos anos 80 pela Bosch GmbH, permite o controle em tempo real com elevado nível de segurança, sendo possível integração multi-mestre com múltiplos destinatários (multicast). Cada mensagem transmitida no nó é acompanhada por um identificador, que, através dele, é informada tanto a prioridade quanto se o receptor deve ou não processá-la.
 O CAN é um sistema de barramento série em que cada mensagem contém, no máximo, 8 bytes ou 40 bits. Contudo, é possível o envio de mensagens maiores através da segmentação. Para o projeto desenvolvido o tamanho padrão das mensagens é suficiente, visto que são necessárias duas informações por motor: o ângulo, de 0º a 180º, e o sentido do movimento, totalizando no mínimo 12 dos 40 bits.
 
-A mensagem contendo a posição final é enviada aos MBEDs, que, a partir dela, coordena os motores cuja competência confere à placa, pares ou ímpares, para a execução do movimento. O protocolo CAN0 é acessível via Linux na placa Colibri VF50 através dos pinos 196/194 ou, o CAN1, por meio dos pinos 63/55, contudo, são necessárias alterações, cujas instruções fornecidas pelo fabricante podem ser encontradas na página https://developer.toradex.com/linux-bsp/how-to/peripheral-access/can-linux/#bsp5. Já as MBEDs têm, por padrão, o protocolo CAN acessível através dos pinos 29/30.
+A mensagem contendo a posição final é enviada aos MBEDs, que, a partir dela, coordena os motores cuja competência confere à placa, pares ou ímpares, para a execução do movimento. O protocolo CAN0 é acessível via Linux na placa Colibri VF50 através dos pinos 196/194 ou, o CAN1, por meio dos pinos 63/55, contudo, são necessárias alterações, cujas instruções fornecidas pelo fabricante podem ser encontradas na página https://developer.toradex.com/linux-bsp/how-to/peripheral-access/can-linux/#bsp5. 
+
+![Config CAN](https://user-images.githubusercontent.com/90531157/182658771-19529594-8db5-466a-9d74-f192e97adb32.jpeg)
+
+Já as MBEDs têm, por padrão, o protocolo CAN acessível através dos pinos 29/30.
 
 ## Resultados e discussão
 
-A princípio, como ainda não haviamos desenvolvido a parte da comunicação, testamos o código da caminhada ([Formiga.c](Formiga.c)) por meio de printfs e scanfs. A idéia inicial era posteriormente substituir os printfs pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse corretamente.
+A princípio, como ainda não havíamos desenvolvido a parte da comunicação, testamos o código da caminhada ([Formiga.c](Formiga.c)) por meio de printfs e scanfs. A ideia inicial era posteriormente substituir os printfs pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse corretamente.
 
 ![caminhada](https://user-images.githubusercontent.com/90531157/182653525-9d54adf1-4003-4eab-9c34-5298089a4916.png)
 
-Podemos observar na imagem acima os valores que seriam enviados para os servomotores. Os primeiros 3 conjuntos de dados são referentes as pernas impares, enquanto os que se encontram após a sincronização são referentes as pernas pares.
+Podemos observar na imagem acima os valores que seriam enviados para os servomotores. Os primeiros 3 conjuntos de dados são referentes às pernas ímpares, enquanto os que se encontram após a sincronização são referentes às pernas pares.
 
 ## Conclusão
 Apesar da impossibilidade de implementação prática dos códigos e visualização do sistema eletromecânico devido ao acesso impossibilitado dos membros, afastados de São Carlos por estagiar em cidades distantes, foram, através das práticas realizadas em sala de aula e programação remota, alcançados os fins acadêmicos da disciplina, como a familiarização com o Linux e, no contexto de sistemas embarcados, seus módulos, protocolos, terminologias e paradigmas. 
