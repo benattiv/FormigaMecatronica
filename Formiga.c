@@ -45,32 +45,38 @@ int DUMMY_LINUX_DATA = 1; // Dado recebido pela comunicação
 void sleep(unsigned int);
 
 void MoverPerna(int i, int j) {
+	printf("Elevação inicial: %d\n", MatrizElevacao[i][j]);
+	printf("Rotação inicial: %d\n", MatrizRotacao[i][j]);
 	//Parte 1: levantar a perna
-	if (MatrizControle[0][0] <= 10){
+	while (MatrizControle[0][0] <= 10){
 		MatrizElevacao[i][j] += MatrizControle[0][0]*2;
-		// CAN
 		MatrizControle[0][0]++;
 	}
+	// CAN
+	printf("1 - Elevação: %d\n", MatrizElevacao[i][j]); //inicialmente os printf foram utilizados para testar o código
 	//Parte 2: rotacionar perna para frente
-	if (MatrizControle[1][0] <= 30){
+	while (MatrizControle[1][0] <= 30){
 		MatrizRotacao[i][j] += MatrizControle[1][0];
-		// CAN
 		MatrizControle[1][0]++;
 	}
+	// CAN
+	printf("2 - Rotação: %d\n", MatrizRotacao[i][j]);
 	//Parte 3: abaixar a perna
-	if (MatrizControle[2][0] <=10){
+	while (MatrizControle[2][0] <=10){
 		MatrizElevacao[i][j] -= MatrizControle[2][0]*2;
-		// CAN
 		MatrizControle[2][0]++;
 	}
+	// CAN
+	printf("3 - Elevação: %d\n", MatrizElevacao[i][j]);
 	//Parte 4: retornar a perna para a posição inicial
-	if (MatrizControle[3][0] <= 30){
+	while (MatrizControle[3][0] <= 30){
 		MatrizRotacao[i][j] -= MatrizControle[3][0];
-		//CAN
 		MatrizControle[3][0]++;
 	}
+	// CAN
+	printf("4 - Rotação: %d\n", MatrizRotacao[i][j]);
 	//Parte 5: resetar valores da MatrizControle
-	if (MatrizControle[3][0] >= 30){
+	while (MatrizControle[3][0] >= 30){
 		MatrizControle[0][0] = 0;
 		MatrizControle[1][0] = 0;
 		MatrizControle[2][0] = 0;
@@ -80,31 +86,31 @@ void MoverPerna(int i, int j) {
 
 void MoverPernaRev(int i, int j) {
 		//Parte 1: levantar a perna
-	if (MatrizControle[0][0] <= 10){
+	while (MatrizControle[0][0] <= 10){
 		MatrizElevacao[i][j] += MatrizControle[0][0]*2;
-		// CAN
 		MatrizControle[0][0]++;
 	}
+	// CAN
 	//Parte 2: rotacionar perna para tras
-	if (MatrizControle[1][0] <= 30){
+	while (MatrizControle[1][0] <= 30){
 		MatrizRotacao[i][j] -= MatrizControle[1][0];
-		// CAN
 		MatrizControle[1][0]++;
 	}
+	// CAN
 	//Parte 3: abaixar a perna
-	if (MatrizControle[2][0] <=10){
+	while (MatrizControle[2][0] <=10){
 		MatrizElevacao[i][j] -= MatrizControle[2][0]*2;
-		// CAN
 		MatrizControle[2][0]++;
 	}
+	// CAN
 	//Parte 4: retornar a perna para a posição inicial
-	if (MatrizControle[3][0] <= 30){
+	while (MatrizControle[3][0] <= 30){
 		MatrizRotacao[i][j] += MatrizControle[3][0];
-		//CAN
 		MatrizControle[3][0]++;
 	}
+	// CAN
 	//Parte 5: resetar valores da MatrizControle
-	if (MatrizControle[3][0] >= 30){
+	while (MatrizControle[3][0] >= 30){
 		MatrizControle[0][0] = 0;
 		MatrizControle[1][0] = 0;
 		MatrizControle[2][0] = 0;
@@ -142,6 +148,8 @@ void PosicaoInicial() {
 
 int main(void) {
 
+	int aux;
+
 	// Posições atuais recebem os valores iniciais
 	for(int i = 0; i<3; i++){
 		for(int j = 0; j<2; j++){
@@ -161,6 +169,9 @@ int main(void) {
 	        	MoverPerna(0, 0);
 	        	MoverPerna(1, 1);
 	        	MoverPerna(2, 0);
+	        	printf("Sinc? ");
+	        	scanf("%d", &aux);
+	        	P1_SINC = aux;
 	        	if (P1_SINC == 1){
 	        		MoverPerna(0, 1);
 	        		MoverPerna(1, 0);
@@ -172,6 +183,9 @@ int main(void) {
 	        	MoverPernaRev(0, 0);
 	        	MoverPernaRev(1, 1);
 	        	MoverPerna(2, 0);
+	        	printf("Sinc? ");
+	        	scanf("%d", &aux);
+	        	P1_SINC = aux;
 	        	if (P1_SINC == 1){
 	          		MoverPernaRev(0, 1);
 	          		MoverPerna(1, 0);
@@ -183,6 +197,9 @@ int main(void) {
 	        	MoverPerna(0, 0);
 	        	MoverPerna(1, 1);
 	        	MoverPernaRev(2, 0);
+	        	printf("Sinc? ");
+	        	scanf("%d", &aux);
+	        	P1_SINC = aux;
 	        	if (P1_SINC == 1){
 	          		MoverPerna(0, 1);
 	          		MoverPernaRev(1, 0);
@@ -194,6 +211,9 @@ int main(void) {
 	        	MoverPernaRev(0, 0);
 	        	MoverPernaRev(1, 1);
 	        	MoverPernaRev(2, 0);
+	        	printf("Sinc? ");
+	        	scanf("%d", &aux);
+	        	P1_SINC = aux;
 	        	if (P1_SINC == 1){
           			MoverPernaRev(0, 1);
         			MoverPernaRev(1, 0);
