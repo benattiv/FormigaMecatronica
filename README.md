@@ -49,5 +49,13 @@ O CAN é um sistema de barramento série em que cada mensagem contém, no máxim
 
 A mensagem contendo a posição final é enviada aos MBEDs, que, a partir dela, coordena os motores cuja competência confere à placa, pares ou ímpares, para a execução do movimento. O protocolo CAN0 é acessível via Linux na placa Colibri VF50 através dos pinos 196/194 ou, o CAN1, por meio dos pinos 63/55, contudo, são necessárias alterações, cujas instruções fornecidas pelo fabricante podem ser encontradas na página https://developer.toradex.com/linux-bsp/how-to/peripheral-access/can-linux/#bsp5. Já as MBEDs têm, por padrão, o protocolo CAN acessível através dos pinos 29/30.
 
+## Resultados e discussão
+
+A princípio, como ainda não haviamos desenvolvido a parte da comunicação, testamos o código da caminhada ([Formiga.c](Formiga.c)) por meio de printfs e scanfs. A idéia inicial era posteriormente substituir os printfs pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse corretamente.
+
+![caminhada](https://user-images.githubusercontent.com/90531157/182653525-9d54adf1-4003-4eab-9c34-5298089a4916.png)
+
+Podemos observar na imagem acima os valores que seriam enviados para os servomotores. Os primeiros 3 conjuntos de dados são referentes as pernas impares, enquanto os que se encontram após a sincronização são referentes as pernas pares.
+
 ## Conclusão
 Apesar da impossibilidade de implementação prática dos códigos e visualização do sistema eletromecânico devido ao acesso impossibilitado dos membros, afastados de São Carlos por estagiar em cidades distantes, foram, através das práticas realizadas em sala de aula e programação remota, alcançados os fins acadêmicos da disciplina, como a familiarização com o Linux e, no contexto de sistemas embarcados, seus módulos, protocolos, terminologias e paradigmas. 
