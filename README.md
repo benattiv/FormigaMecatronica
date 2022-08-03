@@ -35,7 +35,7 @@ Durante o desenvolvimento da lógica da caminhada nos deparamos com diferentes t
 
 ![Caminhada](https://user-images.githubusercontent.com/90531157/177643280-b7854ac2-6927-4a58-9bca-78a4a54f6e1e.jpg)
 
-A partir disso começamos a desenvolver o código [Formiga.c](Códigos toradex/Formiga.c), que é responsável por todo o controle do movimento das pernas. Ele realiza o controle dos motores por meio de uma lógica incremental das variáveis que, ao chegarem ao valor final, serão enviadas para as MBEDs via protocolo CAN. Para facilitar a implementação do movimento, ele foi dividido em 4 estapas, sendo elas:
+A partir disso começamos a desenvolver o código [Formiga.c](Formiga.c), que é responsável por todo o controle do movimento das pernas. Ele realiza o controle dos motores por meio de uma lógica incremental das variáveis que, ao chegarem ao valor final, serão enviadas para as MBEDs via protocolo CAN. Para facilitar a implementação do movimento, ele foi dividido em 4 estapas, sendo elas:
 * 1 - Elevação da perna;
 * 2 - Translação (frente ou trás);
 * 3 - Abaixamento da perna;
@@ -55,7 +55,7 @@ Já as MBEDs têm, por padrão, o protocolo CAN acessível através dos pinos 29
 
 ## Resultados e discussão
 
-A princípio, como ainda não havíamos desenvolvido a parte da comunicação, testamos o código da caminhada ([Formiga.c](Códigos toradex/Formiga.c)) por meio de printfs e scanfs. A ideia inicial era posteriormente substituir os printfs pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse corretamente.
+A princípio, como ainda não havíamos desenvolvido a parte da comunicação, testamos o código da caminhada ([Formiga.c](Formiga.c)) por meio de printfs e scanfs. A ideia inicial era posteriormente substituir os printfs pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse corretamente.
 
 ![caminhada](https://user-images.githubusercontent.com/90531157/182653525-9d54adf1-4003-4eab-9c34-5298089a4916.png)
 
