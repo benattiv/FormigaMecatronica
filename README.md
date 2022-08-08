@@ -56,6 +56,12 @@ A mensagem contendo a posição final é enviada aos MBEDs, que, a partir dela, 
 
 Já as MBEDs têm, por padrão, o protocolo CAN acessível através dos pinos 29/30.
 
+A biblioteca referente ao sistema mbed possui os comandos necessários para o envio e recebimento de informações pelo protocolo CAN, e, após o desenvolvimento da lógica da caminhada, implementamos as funções referentes à comunicação nos códigos das placas Toradex e Mbed.
+
+O desenvolvimento do código foi possível no compilador online oficial da Mbed (https://ide.mbed.com/compiler/). Nele, foi possível gerar o arquivo .bin, que deve ser movido para a placa Mbed.
+
+![Mbed Online Compiler](https://raw.githubusercontent.com/benattiv/FormigaMecatronica/main/mbedcompiler.png)
+
 ## Resultados e discussão
 A princípio, como a comunicação entre placas não havia sido desenvolvida, o código da caminhada ([Formiga.c](Formiga.c)) foi verificado por meio de printfs e scanfs que, posteriormente, seriam substituídos pelo envio de dados via protocolo CAN, de forma a buscar com que o sistema funcionasse conforme traçado no planejamento inicial. Essa avaliação teve como objetivo a análise comparativa entre as saídas e o esperado teórico para a movimentação síncrona das pernas. Todavia, devido a contratempos, a implementação da comunicação não pode ser realizada.
 
@@ -65,7 +71,7 @@ Sabendo disso, o cross-compile do código foi testado à distância, utilizando 
 
 Na imagem acima encontram-se os valores que seriam enviados para as MBEDs, onde seriam normalizados e repassados para os servomotores. Os seis conjuntos de dados correspondem a um ciclo completo do programa, conforme o fluxograma apresentado anteriormente. Deles, os três primeiros conjuntos são referentes às pernas ímpares, enquanto os que se encontram após a sincronização são referentes às pernas pares. Cabe observar que os valores variam de motor para motor, visto que as entradas iniciais são aleatórios e seriam definidos posteriormente de maneira empírica. Assim,  os resultados obtidos são coerentes com os testes do código responsável pela lógica do movimento do robô.
 
-Já sobre o código [mbed.c](mbed.c), não foi possível testá-lo nas MBEDs devido a ambos os membros estarem fora de São Carlos, não podendo utilizar a placa disponibilizada.
+Já sobre o código [mbed.c](mbed.c), não foi possível testá-lo nas MBEDs devido ao uso das placas em outro sistema. Contudo, através dos exemplos e documentação oficial da Mbed, foram desenvolvidos os códigos [FormigaCAN.c](FormigaCAN.c) e [mbed_impar.cpp](mbed_impar.cpp) para testes.
 
 ## Conclusão
 Apesar da impossibilidade de implementação prática dos códigos e visualização do sistema eletromecânico devido ao acesso impossibilitado dos membros, afastados de São Carlos por estagiar em cidades distantes, foram, através das práticas realizadas em sala de aula e programação remota, alcançados os fins acadêmicos da disciplina, como a familiarização com o Linux e, no contexto de sistemas embarcados, seus módulos, protocolos, terminologias e paradigmas. 
